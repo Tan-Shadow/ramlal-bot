@@ -8,4 +8,11 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
+//read a message and reply
+client.on('messageCreate', message => {
+    if (message.content.startsWith('!hello')) {
+        message.reply('Hello!');
+    }
+});
+
 client.login(process.env.RAMLAL_TOKEN)
