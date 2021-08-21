@@ -1,6 +1,7 @@
 FROM node:16-alpine
 
-ENV PORT = 3000
+ENV NODE_ENV=production
+# set your bot token, while running the container 
 
 RUN mkdir -p /home/app
 
@@ -8,6 +9,6 @@ COPY . /home/app
 
 WORKDIR /home/app
 
-RUN npm install
+RUN npm install --production
 
-CMD ["npm", "start"]
+CMD ["npm","start"]

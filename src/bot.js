@@ -1,4 +1,3 @@
-require('dotenv').config();
 // const axios = require('axios');
 
 const { Client, Intents } = require('discord.js');
@@ -8,10 +7,10 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-//read a message and reply
 client.on('messageCreate', message => {
     if (message.content.startsWith('!hello')) {
         message.reply('Hello!');
+        message.channel.send('Hello!');
     }
 });
 
